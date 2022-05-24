@@ -4,14 +4,14 @@ session_start();
 $post = $_POST['postcode'];
 $pin = $_POST['pincode'];
 
-$sql = "SELECT * FROM tbl_users WHERE user_pincode = :pincode";
+$sql = "SELECT * FROM tbl_users WHERE user_postcode = :postcode";
 $stmt = $db->prepare($sql);
 $stmt->execute(array( 
-    ':pincode'=>$pin
+    ':postcode'=>$post
 ));
 $r = $stmt->fetch();
 
-if($pin == $r['user_pincode'] && $post == $r['user_postcode']){
+if(password_verify($pin, $r['user_pincode'])){
     $_SESSION['role'] = $r['user_role'];
     $_SESSION['user_id'] = $r['user_id'];
     if(isset($_SESSION['role'])){
@@ -25,6 +25,9 @@ if($pin == $r['user_pincode'] && $post == $r['user_postcode']){
         header('location:../index.php?page=login');
 
     }
+}else{
+    header('location:../index.php?page=login');
+
 }
 
 ?>

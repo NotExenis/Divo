@@ -10,7 +10,9 @@ if(isset($_SESSION['role'])){
     }
     elseif($_SESSION['role'] == 'user'){
         $navitems = array(
-            array('home', 'Home')
+            array('home', 'Home'),
+            array('logout', 'Logout')
+
         );
     }
 
@@ -19,6 +21,7 @@ else{
     $navitems = array(
         array('login', 'Login'),
         array('register', 'Registreer'),
+        array('login_admin', 'Admin')
     );
 }
 
