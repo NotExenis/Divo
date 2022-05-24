@@ -1,12 +1,13 @@
 <?php
 require 'private/conn.php';
 $id = $_POST['lid_id'];
-$sql = "SELECT * FROM tbl_leden";
+$sql = "SELECT * FROM tbl_leden WHERE lid_id = :id";
 $stmt = $db->prepare($sql);
 $stmt->execute(array(
     ':id'=>$id
 ));
-$r = $stmt->fetch();
+$r = $stmt->fetch(PDO::FETCH_ASSOC);
+
 ?>
 
 

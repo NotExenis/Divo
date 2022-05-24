@@ -35,13 +35,13 @@ $stmt->execute(array('id' => $id));
               <td><?= $r ['lid_woonplaats']?></td>
               <td>
                 <form action="index.php?page=edit_lid" method="post">
-                  <input type="hidden" value="<?php $r['lid_id'] ?>" name="lid_id">
+                  <input type="hidden" value="<?= $r['lid_id'] ?>" name="lid_id"  >
                   <button class="btn btn-warning">Edit</button>
                 </form>
               </td>
               <td>
-                <form action="php/delete_lid.php" method="POST">
-                  <input type="hidden" value="<?php $r['lid_id'] ?>" name="lid_id">
+                <form action="PHP/delete_lid.php" method="POST">
+                  <input type="hidden" value="<?= $r['lid_id'] ?>" name="lid_id">
                   <button class="btn btn-warning">Delete</button>
                 </form>
               </td>

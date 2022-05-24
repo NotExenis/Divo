@@ -22,5 +22,5 @@ $stmt->execute(array(
     ':partij_id'=>$id,
     ':kieslijst'=>$kieslijst
 ));
-header('../index.php?page=home_admin');
+header('location: ../index.php?page=home_admin');
 ?>

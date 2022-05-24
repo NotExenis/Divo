@@ -20,7 +20,9 @@ if(empty($geboorte)){
             ':woonplaats'=>$woonplaats,
             ':geslacht'=>$geslacht,
             ':kieslijst'=>$kieslijst,
+            ':id'=>$id
         )); 
+        header('lcation: ../index.php?page=openpartij');
 }else{
     $sql = "UPDATE tbl_leden
     SET lid_voornaam = :voornaam, lid_tussenvoegsel = :tussenvoegsel, lid_geboorte = :geboorte, lid_achternaam = :achternaam, lid_woonplaats = :woonplaats, lid_geslacht = :geslacht, lid_kieslijst
@@ -34,7 +36,11 @@ if(empty($geboorte)){
         ':woonplaats'=>$woonplaats,
         ':geslacht'=>$geslacht,
         ':kieslijst'=>$kieslijst,
+        ':id'=>$id
+
     ));
+    header('location: ../index.php?page=openpartij');
+
 }
 
 
