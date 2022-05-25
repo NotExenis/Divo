@@ -5,6 +5,7 @@ if(isset($_SESSION['role'])){
             array('home_admin', 'Home'),
             array('add_partij', 'Add partij'),
             array('add_beheer', 'Add beheer'),
+            array('beheer_beheer','Admins'),
             array('logout', 'Logout')
 
         );
