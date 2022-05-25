@@ -4,6 +4,7 @@ if(isset($_SESSION['role'])){
         $navitems = array(
             array('home_admin', 'Home'),
             array('add_partij', 'Add partij'),
+            array('add_beheer', 'Add beheer'),
             array('logout', 'Logout')
 
         );
