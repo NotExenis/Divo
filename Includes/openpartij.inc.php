@@ -42,7 +42,7 @@ $stmt->execute(array('id' => $id));
               <td>
                 <form action="PHP/delete_lid.php" method="POST">
                   <input type="hidden" value="<?= $r['lid_id'] ?>" name="lid_id">
-                  <button class="btn btn-warning">Delete</button>
+                  <button onclick="return confirm('Weet u het zeker?')" class="btn btn-warning">Delete</button>
                 </form>
               </td>
             </tr>
