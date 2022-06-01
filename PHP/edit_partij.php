@@ -21,13 +21,13 @@ if($_FILES['pic']['tmp_name'] == NULL){
     $pic = base64_encode(file_get_contents($_FILES['pic']['tmp_name']));
 
     $sql = "UPDATE tbl_partij 
-            SET partij_naam = :naam, partij_afkorting = :afk, partij_orientatie = orie, partij_foto = :pic
+            SET partij_naam = :naam, partij_afkorting = :afk, partij_orientatie = :orie, partij_foto = :pic
             WHERE partij_id = :id";
     $stmt = $db->prepare($sql);
     $stmt->execute(array( 
         ':naam'=>$naam,
         ':afk'=>$afk,
-        ':orientatie'=>$orient,
+        ':orie'=>$orient,
         ':pic'=>$pic,
         ':id'=>$id
     ));

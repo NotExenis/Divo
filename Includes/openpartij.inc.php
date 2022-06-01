@@ -51,8 +51,9 @@ $stmt->execute(array('id' => $id));
         </table>
 
     </div>
+  </div>
     <div class="col-sm">
 
     </div>
-  </div>
+  
 </div>

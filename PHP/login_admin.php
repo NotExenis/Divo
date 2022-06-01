@@ -1,4 +1,4 @@
-<?php 
+<?php
 require '../private/conn.php';
 session_start();
 $post = $_POST['postcode'];
@@ -15,22 +15,20 @@ if(password_verify($pin, $r['user_pincode'])){
     $_SESSION['role'] = $r['user_role'];
     $_SESSION['user_id'] = $r['user_id'];
     if(isset($_SESSION['role'])){
-        if($_SESSION['role'] == 'admin'){
+        if($_SESSION['role'] == 'user'){
             unset($_SESSION['role']);
             unset($_SESSION['user_id']);
-            $_SESSION['admin_melding'] = "Gebruik de admin login. Log nu in";
-            header('location:../index.php?page=login_admin');
+            $_SESSION['user_melding'] = "Gebruik user login. je bent nu bij de user login";
+            header('location:../index.php?page=login');
         }else{
-            header('location:../index.php?page=home');
+            header('location:../index.php?page=home_admin');
 
         }
     }else{
-        header('location:../index.php?page=login');
-
+        header('location:../index.php?page=login_admin');
     }
 }else{
-    header('location:../index.php?page=login');
-
+    $_SESSION['login_fout'] = 'Uw logins zijn fout';
+    header('location:../index.php?page=login_admin');
 }
-
 ?>
