@@ -1,5 +1,4 @@
 <?php 
-require 'private/conn.php';
 
 $sql = "SELECT * FROM tbl_orientatie";
 $stmt = $db->prepare($sql);

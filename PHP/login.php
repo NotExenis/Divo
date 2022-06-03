@@ -14,7 +14,6 @@ $r = $stmt->fetch();
 if(password_verify($pin, $r['user_pincode'])){
     $_SESSION['role'] = $r['user_role'];
     $_SESSION['user_id'] = $r['user_id'];
-    if(isset($_SESSION['role'])){
         if($_SESSION['role'] == 'admin'){
             unset($_SESSION['role']);
             unset($_SESSION['user_id']);
@@ -24,10 +23,6 @@ if(password_verify($pin, $r['user_pincode'])){
             header('location:../index.php?page=home');
 
         }
-    }else{
-        header('location:../index.php?page=login');
-
-    }
 }else{
     header('location:../index.php?page=login');
 

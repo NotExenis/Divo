@@ -1,6 +1,4 @@
 <?php
-require 'private/conn.php';
-
 $id = $_POST['id'];
 $sql = "SELECT * FROM tbl_users WHERE user_id = :id";
 $stmt = $db->prepare($sql);

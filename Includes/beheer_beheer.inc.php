@@ -1,6 +1,4 @@
 <?php 
-require 'private/conn.php';
-
 $sql = "SELECT * FROM tbl_users WHERE user_role ='admin' ";
 $stmt = $db->prepare($sql);
 $stmt->execute();
@@ -13,8 +11,9 @@ $stmt->execute();
     <div class="col-sm">
 
     </div>
+
     <div class="col-sm">
-            <table class="table table-dark">
+            <table class="table table-dark margin-1">
         <thead>
             <tr>
             <th scope="col">naam</th>

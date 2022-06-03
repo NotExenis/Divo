@@ -1,5 +1,4 @@
 <?php echo "<pre>", print_r($_SESSION), "</pre>"; 
-require 'private/conn.php';
 $sql = "SELECT * FROM tbl_partij 
         INNER JOIN tbl_orientatie ON tbl_partij.partij_orientatie = tbl_orientatie.or_id WHERE partij_id";
 $stmt= $db->prepare($sql);

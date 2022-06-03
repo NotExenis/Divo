@@ -1,5 +1,4 @@
 <?php
-require 'private/conn.php';
 $id = $_POST['lid_id'];
 $sql = "SELECT * FROM tbl_leden WHERE lid_id = :id";
 $stmt = $db->prepare($sql);

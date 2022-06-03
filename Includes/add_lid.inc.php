@@ -1,5 +1,4 @@
 <?php
-require 'private/conn.php';
 $id = $_GET['id'];
 ?>
 
