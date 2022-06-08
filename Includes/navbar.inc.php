@@ -3,6 +3,7 @@ if(isset($_SESSION['role'])){
     if($_SESSION['role'] == 'admin'){
         $navitems = array(
             array('home_admin', 'Home'),
+            array('stemmen', 'Stemmen'),
             array('add_partij', 'Add partij'),
             array('add_beheer', 'Add beheer'),
             array('beheer_beheer','Admins'),
@@ -13,6 +14,7 @@ if(isset($_SESSION['role'])){
     elseif($_SESSION['role'] == 'user'){
         $navitems = array(
             array('home', 'Home'),
+            array('stemmen', 'Stemmen'),
             array('stemmen', 'Stemmen'),
             array('logout', 'Logout')
 
