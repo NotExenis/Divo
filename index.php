@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../private/conn.php';
+require 'private/conn.php';
 
 if(isset($_GET['page'])){
   if(file_exists('php/' . $_GET['page'])){
