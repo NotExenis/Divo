@@ -6,7 +6,6 @@ $sql = "SELECT lid_id FROM tbl_leden";
 $stmt = $db->prepare($sql);
 $stmt->execute();
 $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$id = $r;
 
 
         $firstname = [
@@ -115,20 +114,18 @@ $id = $r;
             'Ramage',
         ];
         foreach($r as $row){
-            $sql = "UPDATE tbl_leden SET lid_achternaam = :achternaam WHERE lid_id = :id";
-            $stmt = $db->prepare($sql);
-            $stmt->bindValue(':achternaam',$lname);
-            $stmt->bindValue(':id',$id);
-            $stmt->execute();
-        
+                $timestamp = mt_rand(1, time());
+                $randomDate = date("Y-m-d", $timestamp);
+                $srting = "";
+                $string = $lastname;
+                $sql = "UPDATE tbl_leden SET lid_geboorte = :datum, lid_achternaam = :achternaam WHERE lid_id = :id";
+                $stmt = $db->prepare($sql);
+                $stmt->bindParam(':achternaam',$last);
+                $stmt->bindParam(':id',$row);
+                $stmt->bindParam(':datum',$randomDate);
+                $stmt->execute();
+                echo json_encode($randomDate);
         }
-
-
-
-
-
-
-
 
 
 //         $geslacht = ['M', 'V'];
