@@ -125,7 +125,7 @@ $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $stmt->bindParam(':datum',$randomDate);
                 $stmt->execute();
                 echo json_encode($randomDate);
-        }
+        } 
 
 
 //         $geslacht = ['M', 'V'];
