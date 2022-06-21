@@ -25,7 +25,7 @@ if(empty($geboorte)){
         header('lcation: ../index.php?page=openpartij');
 }else{
     $sql = "UPDATE tbl_leden
-    SET lid_voornaam = :voornaam, lid_tussenvoegsel = :tussenvoegsel, lid_geboorte = :geboorte, lid_achternaam = :achternaam, lid_woonplaats = :woonplaats, lid_geslacht = :geslacht, lid_kieslijst
+    SET lid_voornaam = :voornaam, lid_tussenvoegsel = :tussenvoegsel, lid_geboorte = :geboorte, lid_achternaam = :achternaam, lid_woonplaats = :woonplaats, lid_geslacht = :geslacht, lid_kieslijst = :kieslijst
     WHERE lid_id = :id";
     $stmt = $db->prepare($sql);
     $stmt->execute(array(
@@ -39,7 +39,7 @@ if(empty($geboorte)){
         ':id'=>$id
 
     ));
-    header('location: ../index.php?page=openpartij');
+    header('location: ../index.php?page=home_admin');
 
 }
 

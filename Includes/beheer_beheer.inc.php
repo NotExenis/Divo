@@ -11,7 +11,6 @@ $stmt->execute();
     <div class="col-sm">
 
     </div>
-
     <div class="col-sm">
             <table class="table table-dark margin-1">
         <thead>

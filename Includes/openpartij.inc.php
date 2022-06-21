@@ -19,6 +19,7 @@ $stmt->execute(array('id' => $id));
         <table class="table table-dark">
           <thead>
             <tr>
+              <th scope="col">Kieslijst</th>
               <th scope="col">Voornaam</th>
               <th scope="col">Acternaam</th>
               <th scope="col">Woonplaats</th>
@@ -29,6 +30,7 @@ $stmt->execute(array('id' => $id));
           <tbody>
             <?php foreach ($stmt as $r) { ?>
               <tr>
+                <td><?= $r['lid_kieslijst'] ?></td>
                 <td><?= $r['lid_voornaam'] ?></td>
                 <td><?= $r['lid_achternaam'] ?></td>
                 <td><?= $r['lid_woonplaats'] ?></td>

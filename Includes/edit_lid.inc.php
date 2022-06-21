@@ -6,7 +6,7 @@ $stmt->execute(array(
     ':id'=>$id
 ));
 $r = $stmt->fetch(PDO::FETCH_ASSOC);
-
+$id = $r['user_id']
 ?>
 
 

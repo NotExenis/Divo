@@ -23,4 +23,7 @@ $stmt->execute(array(
     ':kieslijst'=>$kieslijst
 ));
 header('location: ../index.php?page=home_admin');
+
+
+$result = fetch
 ?>

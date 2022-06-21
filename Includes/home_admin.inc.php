@@ -36,7 +36,7 @@ $stmt->execute();
             </td>
             <td>              
               <form action="index.php?page=edit_partij" method="post">
-                <input type="hidden" value="<?= $r['partij_id'] ?>">
+                <input type="hidden" name="partij_id" value="<?= $r['partij_id'] ?>">
                 <button class="btn btn-outline-light">Edit</button>
               </form>
             </td>

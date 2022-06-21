@@ -1,10 +1,12 @@
 <?php 
+$id = $_POST['partij_id'];
 $sql = "SELECT * FROM tbl_orientatie";
 $stmt = $db->prepare($sql);
 $stmt->execute();
 
-$sql2 = "SELECT * FROM tbl_partij";
+$sql2 = "SELECT * FROM tbl_partij WHERE partij_id = :id";
 $stmt2 = $db->prepare($sql2);
+$stmt2->bindValue(':id',$id);
 $stmt2->execute();
 $r2 = $stmt2->fetch();
 
